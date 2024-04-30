@@ -2,7 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { getData } from './utils/index';
 @Injectable()
 export class AppService {
-  getHello(): any {
-    return getData(); //
+  async getHello() {
+    const res = await getData();
+    return res; //
   }
 }
