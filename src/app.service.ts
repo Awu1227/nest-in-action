@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-
+import { getData } from './utils/index';
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return `Hello Nest!---${new Date(Date.now())}`;
+  getHello(): any {
+    return getData(); //
   }
 }
