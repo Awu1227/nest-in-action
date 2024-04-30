@@ -4,7 +4,7 @@ export const getData = async () => {
   const page = await browser.newPage();
 
   // 1. Create PDF from URL
-  await page.goto('https://www.wuylh.com/replayrobot/index.html', {
+  await page.goto('https://www.wuylh.com/zthelper/ztindex.jsp', {
     timeout: 30 * 1000,
     waitUntil: [
       'load', //等待 “load” 事件触发
@@ -17,7 +17,7 @@ export const getData = async () => {
 
   await page.pdf({ path: 'api.pdf', format: 'A4' });
 
-  const table = await page.$('table#lb-table');
+  const table = await page.$('table#limituptable');
 
   // 检查表格是否存在
   if (table) {
