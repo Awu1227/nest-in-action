@@ -1,12 +1,6 @@
 import puppeteer from 'puppeteer';
 export const getData = async () => {
-  const browser = await puppeteer.launch({
-    headless: false,
-    defaultViewport: {
-      width: 800,
-      height: 1200,
-    },
-  });
+  const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
   // 1. Create PDF from URL
@@ -19,9 +13,6 @@ export const getData = async () => {
       'networkidle2', //在 500ms 内网络连接个数不超过 2 个
     ],
   });
-  // await page.waitForNetworkIdle();
-
-  await page.pdf({ path: 'api.pdf', format: 'A4' });
 
   const table = await page.$('table#limituptable');
 
