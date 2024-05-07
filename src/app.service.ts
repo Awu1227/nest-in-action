@@ -3,7 +3,6 @@ import { getData } from './utils/index';
 @Injectable()
 export class AppService {
   async getHello() {
-    const res = await getData();
-    return res; //
+    return 'Hello Nest';
   }
 }

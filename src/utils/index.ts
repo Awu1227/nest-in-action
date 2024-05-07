@@ -1,6 +1,12 @@
 import puppeteer from 'puppeteer';
 export const getData = async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    headless: false,
+    defaultViewport: {
+      width: 800,
+      height: 1200,
+    },
+  });
   const page = await browser.newPage();
 
   // 1. Create PDF from URL
