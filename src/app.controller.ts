@@ -10,4 +10,8 @@ export class AppController {
     console.log(111);
     return this.appService.getHello();
   }
+  @Get('list')
+  async universityList() {
+    return this.appService.getUniversityData();
+  }
 }
